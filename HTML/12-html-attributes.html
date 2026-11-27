@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Attributes Practice</title>
+
+    <style>
+        #main-heading {
+            color: blue;
+        }
+
+        .course {
+            color: green;
+        }
+
+        .box {
+            background-color: lightyellow;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="main-heading">
+        HTML Attributes Practice
+    </h1>
+
+    <!-- CLASS ATTRIBUTE -->
+    <h2 class="course">HTML</h2>
+    <h2 class="course">CSS</h2>
+    <h2 class="course">JavaScript</h2>
+
+    <hr>
+
+    <!-- STYLE ATTRIBUTE -->
+    <p style="color: red; font-size: 20px;">
+        Learning HTML Attributes
+    </p>
+
+    <!-- TITLE ATTRIBUTE -->
+    <p title="This is additional information">
+        Hover over this paragraph.
+    </p>
+
+    <hr>
+
+    <!-- DATA ATTRIBUTE -->
+    <div id="student"
+         data-name="Deepanshu"
+         data-course="HTML">
+
+        Student Information
+
+    </div>
+
+    <button type="button" id="showData">
+        Show Student Data
+    </button>
+
+    <p id="output"></p>
+
+    <hr>
+
+    <!-- BOOLEAN ATTRIBUTES -->
+    <h2>Registration Form</h2>
+
+    <form>
+
+        <label for="name">Name:</label>
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required>
+
+        <br><br>
+
+        <label for="email">Email:</label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            required>
+
+        <br><br>
+
+        <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            checked>
+
+        <label for="terms">
+            I accept the terms
+        </label>
+
+        <br><br>
+
+        <label for="student-id">Student ID:</label>
+
+        <input
+            type="text"
+            id="student-id"
+            value="STU101"
+            readonly>
+
+        <br><br>
+
+        <label for="courses">Select Courses:</label>
+
+        <select id="courses" name="courses" multiple>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+        <button type="button" disabled>
+            Disabled Button
+        </button>
+
+    </form>
+
+    <script>
+
+        const student = document.getElementById("student");
+        const showData = document.getElementById("showData");
+        const output = document.getElementById("output");
+
+        showData.addEventListener("click", function() {
+
+            const name = student.dataset.name;
+            const course = student.dataset.course;
+
+            output.textContent =
+                "Student: " + name + " | Course: " + course;
+
+        });
+
+    </script>
+
+</body>
+</html>
